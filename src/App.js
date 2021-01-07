@@ -10,10 +10,10 @@ import {
 import FirstPage from "./pages";
 import NotFoundPage from "./pages/404";
 import Lista from "./pages/ListaCarti";
-import CartePreferata from "./pages/";
-import UltimaCititae from "./pages/";
+import CartePreferata from "./pages/CartePreferata";
+import UltimaCitita from "./pages/UltimaCitita";
 
-const App = () => {
+export default function App() {
   return (
     <div>
       <Router>
@@ -21,12 +21,11 @@ const App = () => {
           <Route exact path="/" component={FirstPage}></Route>
           <Route exact path="/404" component={NotFoundPage}></Route>
           <Route exact path="/lista" component={Lista}></Route>
-          <Route exact path="/" component={CartePreferata}></Route>
-          <Route exact path="/" component={UltimaCititae}></Route>
+          <Route exact path="/preferata" component={CartePreferata}></Route>
+          <Route exact path="/citita" component={UltimaCitita}></Route>
           <Redirect to="/404"></Redirect>
         </Switch>
       </Router>
     </div>
   );
-};
-export default App;
+}
